@@ -21,7 +21,4 @@ jobs:
         run: go build -v ./...
 
       - name: Test
-        run: go test \
-          -covermode=atomic -timeout 30s \
-          -coverprofile=coverage/coverage.out \
-          github.com/captain-corgi/translate-host-to-ip/pkg/iptrans
+        run: go test -race -covermode=atomic -timeout 30s -coverprofile=coverage/coverage.out github.com/captain-corgi/translate-host-to-ip/pkg/iptrans
