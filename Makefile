@@ -1,13 +1,14 @@
-all: tidy vendor test build run
+all: tidy vendor coverage build run
 
 build:
-	go build -o iptrans cmd/iptrans/main.go
+	go build -o ipconv cmd/iptrans/main.go
 
 run:
-	./iptrans $(url)
+	./ipconv $(url)
 
 clean:
-	rm ./iptrans
+	rm ./ipconv
+	rm -f vendor
 
 tidy:
 	go mod tidy
