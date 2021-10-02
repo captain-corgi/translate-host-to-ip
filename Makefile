@@ -2,7 +2,7 @@ all: tidy vendor build run
 build:
 	go build -o iptrans cmd/iptrans/main.go
 run:
-	./iptrans
+	./iptrans $(url)
 clean:
 	rm ./iptrans
 tidy:
