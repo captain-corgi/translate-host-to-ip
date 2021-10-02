@@ -22,6 +22,6 @@ jobs:
 
       - name: Test
         run: go test \
-          -race -covermode=atomic -timeout 30s \
+          -covermode=atomic -timeout 30s \
           -coverprofile=coverage/coverage.out \
           github.com/captain-corgi/translate-host-to-ip/pkg/iptrans
