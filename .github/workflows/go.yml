@@ -2,24 +2,26 @@ name: Go
 
 on:
   push:
-    branches: [ DevMaster ]
+    branches: [DevMaster]
   pull_request:
-    branches: [ DevMaster ]
+    branches: [DevMaster]
 
 jobs:
-
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
-    - name: Set up Go
-      uses: actions/setup-go@v2
-      with:
-        go-version: 1.17
+      - name: Set up Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: 1.17
 
-    - name: Build
-      run: go build -v ./...
+      - name: Build
+        run: go build -v ./...
 
-    - name: Test
-      run: go test -v ./...
+      - name: Test
+        run: go test \
+          -race -covermode=atomic -timeout 30s \
+          -coverprofile=coverage/coverage.out \
+          github.com/captain-corgi/translate-host-to-ip/pkg/iptrans

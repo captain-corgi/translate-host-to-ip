@@ -5,8 +5,10 @@ import (
 	"net"
 )
 
+var netLIP = net.LookupIP
+
 func Lookup(domain string) string {
-	ip, err := net.LookupIP(domain)
+	ip, err := netLIP(domain)
 	if err != nil {
 		fmt.Println(fmt.Errorf("%w", err))
 		return ""

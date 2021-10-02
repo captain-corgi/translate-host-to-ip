@@ -1,0 +1,4 @@
+mode: atomic
+github.com/captain-corgi/translate-host-to-ip/pkg/iptrans/iptrans.go:10.35,12.16 2 3
+github.com/captain-corgi/translate-host-to-ip/pkg/iptrans/iptrans.go:16.2,16.26 1 2
+github.com/captain-corgi/translate-host-to-ip/pkg/iptrans/iptrans.go:12.16,15.3 2 1
